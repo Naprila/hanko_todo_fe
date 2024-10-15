@@ -25,6 +25,7 @@ function Todos() {
             fetch(`${BACKEND_URL}/todos/create`, {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
                 body: JSON.stringify({ text: `${text}` })
             }).then((response) => response.json())
             .then((data) => {
