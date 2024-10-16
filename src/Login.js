@@ -26,7 +26,7 @@ function Login() {
       );
 
     useEffect(() => {
-        register(hankoApi).catch((error) => {
+        register(hankoApi, defaultOptions).catch((error) => {
           // handle error
           console.error("Error: ", error)
         });
