@@ -7,7 +7,7 @@ export default function Cancel({ id, setTodos}) {
         fetch(`${BACKEND_URL}/todos/delete`, {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
-            credentials: 'include',
+            credentials: "same-origin",
             body: JSON.stringify({ todoId: `${id}` })
         }).then((response) => response.json())
         .then((data) => {
