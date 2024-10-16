@@ -10,7 +10,7 @@ function Login() {
     const hanko = useMemo(() => new Hanko(hankoApi), []);
     const navigate = useNavigate();
     const defaultOptions = {
-      cookieSameSite: "lax", // Specify whether/when cookies are sent with cross-site requests.
+      cookieSameSite: "none", // Specify whether/when cookies are sent with cross-site requests.
     };
 
     const redirectAfterLogin = useCallback(() => {
@@ -25,8 +25,8 @@ function Login() {
         [hanko, redirectAfterLogin]
       );
 
-    useEffect(() => {
-        register(hankoApi, defaultOptions).catch((error) => {
+    useEffect(async () => {
+        await register(hankoApi, defaultOptions).catch((error) => {
           // handle error
           console.error("Error: ", error)
         });
