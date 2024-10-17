@@ -25,11 +25,17 @@ function Login() {
         [hanko, redirectAfterLogin]
       );
 
-    useEffect(async () => {
-        await register(hankoApi, defaultOptions).catch((error) => {
+    useEffect(() => {
+      const registerHanko = async () => {
+        try {
+          await register(hankoApi, defaultOptions);
+        } catch (error) {
           // handle error
-          console.error("Error: ", error)
-        });
+          console.error("Error: ", error);
+        }
+      };
+    
+      registerHanko();
       }, []);
 
     return (
