@@ -10,6 +10,7 @@ function Login() {
     const hanko = useMemo(() => new Hanko(hankoApi), []);
     const navigate = useNavigate();
     const defaultOptions = {
+      cookieDomain: "https://hanko-todo-fe.vercel.app/todos",
       cookieSameSite: "none", // Specify whether/when cookies are sent with cross-site requests.
     };
 
