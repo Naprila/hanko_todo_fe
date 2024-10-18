@@ -33,7 +33,7 @@ function Todos() {
                 setText("")
                 console.log(data.todo);
             })
-            .catch((error) => console.log(error));
+            .catch((error) => { console.log(error) });
         }
     }
 
